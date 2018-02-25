@@ -43,8 +43,10 @@ class WordsController < ApplicationController
 
   def destroy
     @word.destroy
-    redirect_to words_path, notice: 'Word was successfully destroyed.'
-    head :no_content
+    respond_to do |format|
+        format.html { redirect_to words_path, notice: 'Word was successfully destroyed.' }
+        format.json { head :no_content }
+    end
   end
 
   private
