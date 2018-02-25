@@ -33,6 +33,6 @@ class PhrasesController < ApplicationController
   end
 
   def set_phrase
-    @phrase = phrase.find(params[:id])
+    @phrase = Phrase.find(params[:id])
   end
 end
