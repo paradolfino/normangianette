@@ -25,9 +25,7 @@ class WordsController < ApplicationController
       end
   end
 
-  def show
-    json_response(@word)
-  end
+  def show; end
 
   def edit; end
 
@@ -37,8 +35,15 @@ class WordsController < ApplicationController
     else
         render 'edit'
     end
-    
-    head :no_content
+    respond_to do |format|
+        if @word.update(word_params)
+          format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+          format.json { render :show, status: :ok, location: @blog }
+        else
+          format.html { render :edit }
+          format.json { render json: @blog.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   def destroy
