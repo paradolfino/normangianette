@@ -13,34 +13,40 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    json_response(@word, :created)
-    if @word.save
-        redirect_to words_path, notice: 'Word was successfully saved.'
-    else
-        render 'new'
-    end
+    respond_to do |format|
+        if @word.save
+            
+            format.html { redirect_to @word, notice: 'Word was successfully saved.' }
+            format.json { render :show, status: :created, location: @word }
+        else
+            format.html { render :new }
+            format.json { render json: @word.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
-  def show
-    json_response(@word)
-  end
+  def show; end
 
   def edit; end
 
   def update
-    if @word.update(word_params)
-        redirect_to word_path(@word), notice: 'Word was successfully updated.'
-    else
-        render 'edit'
-    end
-    
-    head :no_content
+    respond_to do |format|
+        if @word.update(word_params)
+          format.html { redirect_to @word, notice: 'Word was successfully updated.' }
+          format.json { render :show, status: :ok, location: @word }
+        else
+          format.html { render :edit }
+          format.json { render json: @word.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   def destroy
     @word.destroy
-    redirect_to words_path, notice: 'Word was successfully destroyed.'
-    head :no_content
+    respond_to do |format|
+        format.html { redirect_to words_path, notice: 'Word was successfully destroyed.' }
+        format.json { head :no_content }
+    end
   end
 
   private

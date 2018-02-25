@@ -44,3 +44,11 @@ Things you may want to cover:
 ##### 25/02/2018: 11:49 - 12:03:pool[implement standard REST actions for non-json req/res]
 
 ##### 25/02/2018: 12:03 - 12:13:pool[implement standard REST actions for phrases controller]
+
+##### 25/02/2018: 12:28 - 13:27:pool[refactor controllers to use respond_to instead of response concern]
+
+##### 25/02/2018: 13:27 - 13:34:pool[refactor for respond_to in phrases controller]
+
+##### 25/02/2018: 13:34 - 13:35:pool[create word views]
+
+##### 25/02/2018: 13:35 - 13:36:pool[create phrases views]

@@ -13,32 +13,39 @@ class PhrasesController < ApplicationController
 
   def create
     @phrase = Phrase.new(phrase_params)
-    if @phrase.save
-        redirect_to phrases_path, notice: 'Phrase was successfully saved.'
-    else
-        render 'new'
-    end
-    json_response(@phrase, :created)
+
+    respond_to do |format|
+        if @phrase.save
+            
+            format.html { redirect_to @phrase, notice: 'Phrase was successfully saved.' }
+            format.json { render :show, status: :created, location: @phrase }
+        else
+            format.html { render :new }
+            format.json { render json: @phrase.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
-  def show
-    json_response(@phrase)
-  end
+  def show; end
 
   def update
-    
-    if @phrase.update(phrase_params)
-        redirect_to phrase_path(@phrase), notice: 'Phrase was successfully updated.'
-    else
-        render 'edit'
+    respond_to do |format|
+        if @phrase.update(phrase_params)
+          format.html { redirect_to @phrase, notice: 'Phrase was successfully updated.' }
+          format.json { render :show, status: :ok, location: @phrase }
+        else
+          format.html { render :edit }
+          format.json { render json: @phrase.errors, status: :unprocessable_entity }
+        end
     end
-    head :no_content
   end
 
   def destroy
     @phrase.destroy
-    redirect_to phrases_path, notice: 'Phrase was successfully destroyed.'
-    head :no_content
+    respond_to do |format|
+        format.html { redirect_to phrases_path, notice: 'Phrase was successfully destroyed.' }
+        format.json { head :no_content }
+    end
   end
 
   private
