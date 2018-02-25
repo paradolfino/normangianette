@@ -50,3 +50,5 @@ Things you may want to cover:
 ##### 25/02/2018: 13:27 - 13:34:pool[refactor for respond_to in phrases controller]
 
 ##### 25/02/2018: 13:34 - 13:35:pool[create word views]
+
+##### 25/02/2018: 13:35 - 13:36:pool[create phrases views]
