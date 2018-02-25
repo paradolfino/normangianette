@@ -30,3 +30,5 @@ Things you may want to cover:
 ##### 25/02/2018: 11:29 - 11:31:pool[generate controllers for phrases and words]
 
 ##### 25/02/2018: 11:31 - 11:34:pool[configure routes for words and phrases]
+
+##### 25/02/2018: 11:34 - 11:37:pool[add REST actions for words controller]
