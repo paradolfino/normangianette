@@ -7,6 +7,10 @@ class WordsController < ApplicationController
     json_response(@words)
   end
 
+  def new
+
+  end
+
   def create
     @word = Word.create!(word_params)
     json_response(@word, :created)
