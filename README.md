@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+##### 25/02/2018: 11:19 - 11:27:pool[generate migrations for words and phrases]
