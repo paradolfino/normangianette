@@ -29,13 +29,15 @@ class PhrasesController < ApplicationController
   def show; end
 
   def update
-    
-    if @phrase.update(phrase_params)
-        redirect_to phrase_path(@phrase), notice: 'Phrase was successfully updated.'
-    else
-        render 'edit'
+    respond_to do |format|
+        if @phrase.update(phrase_params)
+          format.html { redirect_to @phrase, notice: 'Phrase was successfully updated.' }
+          format.json { render :show, status: :ok, location: @phrase }
+        else
+          format.html { render :edit }
+          format.json { render json: @phrase.errors, status: :unprocessable_entity }
+        end
     end
-    head :no_content
   end
 
   def destroy
