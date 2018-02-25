@@ -7,6 +7,10 @@ class PhrasesController < ApplicationController
     json_response(@phrases)
   end
 
+  def new
+    @phrase = Phrase.new
+  end
+
   def create
     @phrase = Phrase.create!(phrase_params)
     json_response(@phrase, :created)
