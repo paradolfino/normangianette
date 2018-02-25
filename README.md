@@ -42,3 +42,5 @@ Things you may want to cover:
 ##### 25/02/2018: 11:43 - 11:44:pool[include new concerns in application controller]
 
 ##### 25/02/2018: 11:49 - 12:03:pool[implement standard REST actions for non-json req/res]
+
+##### 25/02/2018: 12:03 - 12:13:pool[implement standard REST actions for phrases controller]
