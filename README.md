@@ -36,3 +36,5 @@ Things you may want to cover:
 ##### 25/02/2018: 11:37 - 11:39:pool[add REST actions to phrases controller]
 
 ##### 25/02/2018: 11:39 - 11:40:pool[create json_response concern]
+
+##### 25/02/2018: 11:40 - 11:43:pool[create exception_handler concern for handling requests where a record does not exist]
