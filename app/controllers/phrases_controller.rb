@@ -13,12 +13,17 @@ class PhrasesController < ApplicationController
 
   def create
     @phrase = Phrase.new(phrase_params)
-    if @phrase.save
-        redirect_to phrases_path, notice: 'Phrase was successfully saved.'
-    else
-        render 'new'
-    end
-    json_response(@phrase, :created)
+
+    respond_to do |format|
+        if @phrase.save
+            
+            format.html { redirect_to @phrase, notice: 'phrase was successfully saved.' }
+            format.json { render :show, status: :created, location: @phrase }
+        else
+            format.html { render :new }
+            format.json { render json: @phrase.errors, status: :unprocessable_entity }
+        end
+      end
   end
 
   def show
