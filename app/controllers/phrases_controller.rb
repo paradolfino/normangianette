@@ -14,7 +14,7 @@ class PhrasesController < ApplicationController
   def create
     @phrase = Phrase.new(phrase_params)
     if @phrase.save
-        redirect_to phrases_path, notice: 'Word was successfully saved.'
+        redirect_to phrases_path, notice: 'Phrase was successfully saved.'
     else
         render 'new'
     end
