@@ -26,7 +26,12 @@ class PhrasesController < ApplicationController
   end
 
   def update
-    @phrase.update(phrase_params)
+    
+    if @phrase.update(phrase_params)
+        redirect_to word_path(@word), notice: 'Word was successfully updated.'
+    else
+        render 'edit'
+    end
     head :no_content
   end
 
