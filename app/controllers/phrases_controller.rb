@@ -17,7 +17,7 @@ class PhrasesController < ApplicationController
     respond_to do |format|
         if @phrase.save
             
-            format.html { redirect_to @phrase, notice: 'phrase was successfully saved.' }
+            format.html { redirect_to @phrase, notice: 'Phrase was successfully saved.' }
             format.json { render :show, status: :created, location: @phrase }
         else
             format.html { render :new }
