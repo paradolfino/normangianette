@@ -1,6 +1,1 @@
 
-[implement standard REST actions for non-json requests for words/phrases]
-### 25/02/2018[11:49 - 12:13]:
-* implement standard REST actions for non-json req/res
-* implement standard REST actions for phrases controller
-
