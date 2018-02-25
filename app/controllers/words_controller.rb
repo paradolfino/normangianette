@@ -36,4 +36,3 @@ class WordsController < ApplicationController
     @todo = Todo.find(params[:id])
   end
 end
-end
