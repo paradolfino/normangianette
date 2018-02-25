@@ -26,9 +26,7 @@ class PhrasesController < ApplicationController
       end
   end
 
-  def show
-    json_response(@phrase)
-  end
+  def show; end
 
   def update
     
