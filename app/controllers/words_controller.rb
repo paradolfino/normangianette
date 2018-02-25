@@ -1,38 +1,38 @@
 class WordsController < ApplicationController
-    before_action :set_todo, only: [:show, :update, :destroy]
+    before_action :set_word, only: [:show, :update, :destroy]
 
 
   def index
-    @todos = Todo.all
-    json_response(@todos)
+    @words = word.all
+    json_response(@words)
   end
 
   def create
-    @todo = Todo.create!(todo_params)
-    json_response(@todo, :created)
+    @word = word.create!(word_params)
+    json_response(@word, :created)
   end
 
   def show
-    json_response(@todo)
+    json_response(@word)
   end
 
   def update
-    @todo.update(todo_params)
+    @word.update(word_params)
     head :no_content
   end
 
   def destroy
-    @todo.destroy
+    @word.destroy
     head :no_content
   end
 
   private
 
-  def todo_params
+  def word_params
     params.permit(:title, :created_by)
   end
 
-  def set_todo
-    @todo = Todo.find(params[:id])
+  def set_word
+    @word = word.find(params[:id])
   end
 end
