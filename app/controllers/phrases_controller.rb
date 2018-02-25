@@ -12,7 +12,12 @@ class PhrasesController < ApplicationController
   end
 
   def create
-    @phrase = Phrase.create!(phrase_params)
+    @phrase = Phrase.new(phrase_params)
+    if @phrase.save
+        redirect_to words_path, notice: 'Word was successfully saved.'
+    else
+        render 'new'
+    end
     json_response(@phrase, :created)
   end
 
