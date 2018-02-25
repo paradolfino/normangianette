@@ -16,7 +16,7 @@ class WordsController < ApplicationController
     json_response(@word, :created)
     if @word.save
         puts @portfolio
-        redirect_to words_path
+        redirect_to words_path, notice: 'Word was successfully saved.'
     else
         render 'new'
     end
