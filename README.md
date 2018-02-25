@@ -28,3 +28,5 @@ Things you may want to cover:
 ##### 25/02/2018: 11:27 - 11:29:pool[implement model validations]
 
 ##### 25/02/2018: 11:29 - 11:31:pool[generate controllers for phrases and words]
+
+##### 25/02/2018: 11:31 - 11:34:pool[configure routes for words and phrases]
