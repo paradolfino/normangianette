@@ -44,7 +44,7 @@ class PhrasesController < ApplicationController
   private
 
   def phrase_params
-    params.permit(:title, :created_by)
+    params.permit(:english, :normansk, :created_by)
   end
 
   def set_phrase
