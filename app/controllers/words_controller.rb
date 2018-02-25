@@ -39,10 +39,20 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.permit(:title, :created_by)
+    params.permit(:eng_si, :nor_si, :nor_pl, :nor_def, :nor_defpl, :nor_past, :nor_pres, :nor_fut, :created_by)
   end
 
   def set_word
     @word = Word.find(params[:id])
   end
 end
+
+t.string "eng_si"
+    t.string "eng_pl"
+    t.string "nor_si"
+    t.string "nor_pl"
+    t.string "nor_def"
+    t.string "nor_defpl"
+    t.string "nor_past"
+    t.string "nor_pres"
+    t.string "nor_fut"
