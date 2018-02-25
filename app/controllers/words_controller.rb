@@ -25,6 +25,8 @@ class WordsController < ApplicationController
     json_response(@word)
   end
 
+  def edit; end
+
   def update
     if @word.update(word_params)
         redirect_to word_path(@word), notice: 'Word was successfully updated.'
