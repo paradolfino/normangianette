@@ -1,13 +1,6 @@
 
-[create api for normangian dictionary]
-### 25/02/2018[11:19 - 11:44]:
-* generate migrations for words and phrases
-* implement model validations
-* generate controllers for phrases and words
-* configure routes for words and phrases
-* add REST actions for words controller
-* add REST actions to phrases controller
-* create json_response concern
-* create exception_handler concern for handling requests where a record does not exist
-* include new concerns in application controller
+[implement standard REST actions for non-json requests for words/phrases]
+### 25/02/2018[11:49 - 12:13]:
+* implement standard REST actions for non-json req/res
+* implement standard REST actions for phrases controller
 
