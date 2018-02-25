@@ -19,7 +19,8 @@ class WordsController < ApplicationController
             format.html { redirect_to @word, notice: 'Word was successfully saved.' }
             format.json { render :show, status: :created, location: @word }
         else
-            render 'new'
+            format.html { render :new }
+            format.json { render :show, status: :created, location: @word }
         end
       end
   end
