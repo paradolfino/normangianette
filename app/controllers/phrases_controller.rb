@@ -37,7 +37,7 @@ class PhrasesController < ApplicationController
 
   def destroy
     @phrase.destroy
-    redirect_to phrases_path
+    redirect_to phrases_path, notice: 'Phrase was successfully destroyed.'
     head :no_content
   end
 
