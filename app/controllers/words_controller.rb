@@ -14,6 +14,12 @@ class WordsController < ApplicationController
   def create
     @word = Word.new(word_params)
     json_response(@word, :created)
+    if @word.save
+        puts @portfolio
+        redirect_to words_path
+    else
+        render 'new'
+    end
   end
 
   def show
