@@ -24,3 +24,5 @@ Things you may want to cover:
 * ...
 
 ##### 25/02/2018: 11:19 - 11:27:pool[generate migrations for words and phrases]
+
+##### 25/02/2018: 11:27 - 11:29:pool[implement model validations]
