@@ -40,3 +40,5 @@ Things you may want to cover:
 ##### 25/02/2018: 11:40 - 11:43:pool[create exception_handler concern for handling requests where a record does not exist]
 
 ##### 25/02/2018: 11:43 - 11:44:pool[include new concerns in application controller]
+
+##### 25/02/2018: 11:49 - 12:03:pool[implement standard REST actions for non-json req/res]
