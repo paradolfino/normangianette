@@ -26,7 +26,13 @@ class WordsController < ApplicationController
   end
 
   def update
-    @word.update(word_params)
+    if @word.update(word_params)
+        flash[:success] = "Portfolio Item was successfully updated!"
+        redirect_to word_path(@word), , notice: 'Word was successfully updated.'
+    else
+        render 'edit'
+    end
+    
     head :no_content
   end
 
