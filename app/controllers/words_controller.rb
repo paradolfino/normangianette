@@ -26,7 +26,7 @@ class WordsController < ApplicationController
   end
 
 def show
-    @word = Word.wher
+    Word.joins(:phrases).where(id: params[:id])
 end
 
   def edit; end
