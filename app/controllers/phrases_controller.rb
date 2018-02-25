@@ -1,38 +1,38 @@
 class PhrasesController < ApplicationController
-    before_action :set_word, only: [:show, :update, :destroy]
+    before_action :set_phrase, only: [:show, :update, :destroy]
 
 
   def index
-    @words = Word.all
-    json_response(@words)
+    @phrases = Phrase.all
+    json_response(@phrases)
   end
 
   def create
-    @word = Word.create!(word_params)
-    json_response(@word, :created)
+    @phrase = Phrase.create!(phrase_params)
+    json_response(@phrase, :created)
   end
 
   def show
-    json_response(@word)
+    json_response(@phrase)
   end
 
   def update
-    @word.update(word_params)
+    @phrase.update(phrase_params)
     head :no_content
   end
 
   def destroy
-    @word.destroy
+    @phrase.destroy
     head :no_content
   end
 
   private
 
-  def word_params
+  def phrase_params
     params.permit(:title, :created_by)
   end
 
-  def set_word
-    @word = Word.find(params[:id])
+  def set_phrase
+    @phrase = phrase.find(params[:id])
   end
 end
