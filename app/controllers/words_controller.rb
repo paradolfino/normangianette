@@ -12,7 +12,7 @@ class WordsController < ApplicationController
   end
 
   def create
-    @word = Word.create!(word_params)
+    @word = Word.new(word_params)
     json_response(@word, :created)
   end
 
