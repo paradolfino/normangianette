@@ -15,7 +15,9 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
     respond_to do |format|
         if @word.save
-            redirect_to words_path, notice: 'Word was successfully saved.'
+            
+            format.html { redirect_to @word, notice: 'Word was successfully saved.' }
+            format.json { render :show, status: :created, location: @blog }
         else
             render 'new'
         end
