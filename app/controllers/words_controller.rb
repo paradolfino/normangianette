@@ -13,12 +13,13 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    json_response(@word, :created)
-    if @word.save
-        redirect_to words_path, notice: 'Word was successfully saved.'
-    else
-        render 'new'
-    end
+    respond_to do |format|
+        if @word.save
+            redirect_to words_path, notice: 'Word was successfully saved.'
+        else
+            render 'new'
+        end
+      end
   end
 
   def show
