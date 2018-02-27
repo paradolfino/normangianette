@@ -4,9 +4,9 @@ class PhrasesController < ApplicationController
 
   def index
     @phrases = Phrase.all
-    json_response(@phrases)
     respond_to do |format|
       format.html { render :index }
+      format.json { json_response(@phrases) }
     end
   end
 
