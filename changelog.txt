@@ -14,3 +14,4 @@
 25/02/2018: 13:34 - 13:35:pool[create word views]
 25/02/2018: 13:35 - 13:36:pool[create phrases views]
 25/02/2018: 13:43 - 14:29:pool[create word json views]
+26/02/2018: 19:08 - 19:15:pool[fix format.json for all views]
