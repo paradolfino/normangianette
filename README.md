@@ -58,3 +58,9 @@ Things you may want to cover:
 ##### 26/02/2018: 19:08 - 19:15:pool[fix format.json for all views]
 
 ##### 26/02/2018: 19:16 - 19:30:pool[fix formatting json for phrases controller]
+
+##### 26/02/2018: 19:42 - 19:42:pool[add category column to phrases table]
+
+##### 26/02/2018: 19:42 - 19:47:pool[migrate database]
+
+##### 26/02/2018: 19:47 - 19:58:pool[rollback database and prepare category model with has_many phrases]
