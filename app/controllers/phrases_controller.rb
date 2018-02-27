@@ -6,7 +6,7 @@ class PhrasesController < ApplicationController
     @phrases = Phrase.all
     json_response(@phrases)
     respond_to do |format|
-      format.html { redirect_to @phrases }
+      format.html { render :index }
     end
   end
 
