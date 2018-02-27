@@ -22,7 +22,7 @@ class WordsController < ApplicationController
         if @word.save
             
             format.html { redirect_to @word, notice: 'Word was successfully saved.' }
-            format.json { json_response(@word) }
+            format.json { json_response(@word.to_json(:include => :phrases)) }
         else
             format.html { render :new }
             format.json { json_response(@word.errors, :unprocessable_entity)
@@ -34,7 +34,7 @@ class WordsController < ApplicationController
 def show
     respond_to do |format|
       format.html { render :show}
-      format.json { json_response(@word) }
+      format.json { json_response(@word.to_json(:include => :phrases)) }
     end
 end
 
@@ -44,7 +44,7 @@ end
     respond_to do |format|
         if @word.update(word_params)
           format.html { redirect_to @word, notice: 'Word was successfully updated.' }
-          format.json { json_response(@word) }
+          format.json { json_response(@word.to_json(:include => :phrases)) }
         else
           format.html { render :edit }
           format.json { render json: @word.errors, status: :unprocessable_entity }
