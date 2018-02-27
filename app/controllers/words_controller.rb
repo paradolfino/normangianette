@@ -47,7 +47,7 @@ end
           format.json { json_response(@word.to_json(:include => :phrases)) }
         else
           format.html { render :edit }
-          format.json { render json: @word.errors, status: :unprocessable_entity }
+          format.json { json_response(@word.errors, :unprocessable_entity) }
         end
       end
   end
