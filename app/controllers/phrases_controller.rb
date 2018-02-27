@@ -18,7 +18,7 @@ class PhrasesController < ApplicationController
         if @phrase.save
             
             format.html { redirect_to @phrase, notice: 'Phrase was successfully saved.' }
-            format.json { render :show, status: :created, location: @phrase }
+            format.json { json_response(@phrase) }
         else
             format.html { render :new }
             format.json { render json: @phrase.errors, status: :unprocessable_entity }
