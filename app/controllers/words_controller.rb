@@ -26,8 +26,10 @@ class WordsController < ApplicationController
   end
 
 def show
-    @phrases = @word.phrases
-    Word.joins(:phrases).where(id: params[:id])
+    respond_to do |format|
+      format.html { render :show}
+      format.json { json_response(@word) }
+    end
 end
 
   def edit; end
