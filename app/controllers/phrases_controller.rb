@@ -4,7 +4,10 @@ class PhrasesController < ApplicationController
 
   def index
     @phrases = Phrase.all
-    json_response(@phrases)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { json_response(@phrases) }
+    end
   end
 
   def new
@@ -18,24 +21,26 @@ class PhrasesController < ApplicationController
         if @phrase.save
             
             format.html { redirect_to @phrase, notice: 'Phrase was successfully saved.' }
-            format.json { render :show, status: :created, location: @phrase }
+            format.json { json_response(@phrase) }
         else
             format.html { render :new }
-            format.json { render json: @phrase.errors, status: :unprocessable_entity }
+            format.json { json_response(@phrase.errors, :unprocessable_entity) }
         end
       end
   end
 
-  def show; end
+  def show
+    json_response(@phrase.to_json(:include => :word))
+  end
 
   def update
     respond_to do |format|
         if @phrase.update(phrase_params)
           format.html { redirect_to @phrase, notice: 'Phrase was successfully updated.' }
-          format.json { render :show, status: :ok, location: @phrase }
+          format.json { json_response(@phrase) }
         else
           format.html { render :edit }
-          format.json { render json: @phrase.errors, status: :unprocessable_entity }
+          format.json { json_response(@phrase.errors, :unprocessable_entity) }
         end
     end
   end
