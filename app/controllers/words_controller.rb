@@ -7,7 +7,7 @@ class WordsController < ApplicationController
     @words = Word.all
     respond_to do |format|
       format.html { render :index}
-      format.json { json_response(@words) }
+      format.json { json_response(@words.to_json(:include => :phrases)) }
     end
     
   end
