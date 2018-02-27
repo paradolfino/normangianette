@@ -5,6 +5,9 @@ class PhrasesController < ApplicationController
   def index
     @phrases = Phrase.all
     json_response(@phrases)
+    respond_to do |format|
+      format.html { redirect_to @phrases }
+    end
   end
 
   def new
