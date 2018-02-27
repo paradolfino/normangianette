@@ -58,3 +58,5 @@ Things you may want to cover:
 ##### 26/02/2018: 19:08 - 19:15:pool[fix format.json for all views]
 
 ##### 26/02/2018: 19:16 - 19:30:pool[fix formatting json for phrases controller]
+
+##### 26/02/2018: 19:42 - 19:42:pool[add category column to phrases table]
