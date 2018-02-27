@@ -1,1 +1,6 @@
 
+[implement full json/html rendering support for words and phrases controllers]
+### 26/02/2018[19:08 - 19:30]:
+* fix format.json for all views
+* fix formatting json for phrases controller
+

@@ -56,3 +56,5 @@ Things you may want to cover:
 ##### 25/02/2018: 13:43 - 14:29:pool[create word json views]
 
 ##### 26/02/2018: 19:08 - 19:15:pool[fix format.json for all views]
+
+##### 26/02/2018: 19:16 - 19:30:pool[fix formatting json for phrases controller]
