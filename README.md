@@ -60,3 +60,5 @@ Things you may want to cover:
 ##### 26/02/2018: 19:16 - 19:30:pool[fix formatting json for phrases controller]
 
 ##### 26/02/2018: 19:42 - 19:42:pool[add category column to phrases table]
+
+##### 26/02/2018: 19:42 - 19:47:pool[migrate database]
