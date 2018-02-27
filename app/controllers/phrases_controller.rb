@@ -24,7 +24,7 @@ class PhrasesController < ApplicationController
             format.json { json_response(@phrase) }
         else
             format.html { render :new }
-            format.json { render json: @phrase.errors, status: :unprocessable_entity }
+            format.json { json_response(@phrase.errors, :unprocessable_entity) }
         end
       end
   end
@@ -38,7 +38,7 @@ class PhrasesController < ApplicationController
           format.json { json_response(@phrase) }
         else
           format.html { render :edit }
-          format.json { render json: @phrase.errors, status: :unprocessable_entity }
+          format.json { json_response(@phrase.errors, :unprocessable_entity) }
         end
     end
   end
