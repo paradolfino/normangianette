@@ -3,8 +3,13 @@ class WordsController < ApplicationController
 
 
   def index
+
     @words = Word.all
-    json_response(@words)
+    respond_to do |format|
+      format.html { render :index}
+      format.json { json_response(@words) }
+    end
+    
   end
 
   def new
