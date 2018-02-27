@@ -30,7 +30,7 @@ class PhrasesController < ApplicationController
   end
 
   def show
-    json_response(@phrase.to_json(:include => :word)
+    json_response(@phrase.to_json(:include => :word))
   end
 
   def update
