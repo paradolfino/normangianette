@@ -18,17 +18,14 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    respond_to do |format|
-        if @word.save
-            
-            format.html { redirect_to @word, notice: 'Word was successfully saved.' }
-            format.json { json_response(@word.to_json(:include => :phrases)) }
-        else
-            format.html { render :new }
-            format.json { json_response(@word.errors, :unprocessable_entity) }
-            #render json: @word.errors, status: :unprocessable_entity
-        end
-      end
+
+    if @word.save
+        format.json { json_response(@word.to_json(:include => :phrases)) }
+    else
+        format.json { json_response(@word.errors, :unprocessable_entity) }
+        #render json: @word.errors, status: :unprocessable_entity
+    end
+
   end
 
 def show
