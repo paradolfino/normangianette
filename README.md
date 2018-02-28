@@ -68,3 +68,5 @@ Things you may want to cover:
 ##### 27/02/2018: 19:08 - 19:09:pool[add relationship between categories and words model]
 
 ##### 27/02/2018: 19:09 - 19:15:pool[add category routes]
+
+##### 27/02/2018: 19:15 - 19:50:pool[modify phrases and words controller to only allow html rendering for show/index]

@@ -1,1 +1,7 @@
 
+[add reference from category to word model]
+### 27/02/2018[19:08 - 19:50]:
+* add relationship between categories and words model
+* add category routes
+* modify phrases and words controller to only allow html rendering for show/index
+
