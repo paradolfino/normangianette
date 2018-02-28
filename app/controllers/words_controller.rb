@@ -18,17 +18,14 @@ class WordsController < ApplicationController
 
   def create
     @word = Word.new(word_params)
-    respond_to do |format|
-        if @word.save
-            
-            format.html { redirect_to @word, notice: 'Word was successfully saved.' }
-            format.json { json_response(@word.to_json(:include => :phrases)) }
-        else
-            format.html { render :new }
-            format.json { json_response(@word.errors, :unprocessable_entity) }
-            #render json: @word.errors, status: :unprocessable_entity
-        end
-      end
+
+    if @word.save
+        format.json { json_response(@word.to_json(:include => :phrases)) }
+    else
+        format.json { json_response(@word.errors, :unprocessable_entity) }
+        #render json: @word.errors, status: :unprocessable_entity
+    end
+
   end
 
 def show
@@ -41,23 +38,20 @@ end
   def edit; end
 
   def update
-    respond_to do |format|
-        if @word.update(word_params)
-          format.html { redirect_to @word, notice: 'Word was successfully updated.' }
-          format.json { json_response(@word.to_json(:include => :phrases)) }
-        else
-          format.html { render :edit }
-          format.json { json_response(@word.errors, :unprocessable_entity) }
-        end
-      end
+
+    if @word.update(word_params)
+      format.json { json_response(@word.to_json(:include => :phrases)) }
+    else
+      format.json { json_response(@word.errors, :unprocessable_entity) }
+    end
+
   end
 
   def destroy
     @word.destroy
-    respond_to do |format|
-        format.html { redirect_to words_path, notice: 'Word was successfully destroyed.' }
-        format.json { head :no_content }
-    end
+
+    format.json { head :no_content }
+
   end
 
   private
