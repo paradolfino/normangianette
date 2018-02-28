@@ -40,10 +40,8 @@ class PhrasesController < ApplicationController
 
   def destroy
     @phrase.destroy
-    respond_to do |format|
-        format.html { redirect_to phrases_path, notice: 'Phrase was successfully destroyed.' }
-        format.json { head :no_content }
-    end
+    format.json { head :no_content }
+    
   end
 
   private
