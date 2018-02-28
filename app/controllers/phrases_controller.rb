@@ -16,13 +16,13 @@ class PhrasesController < ApplicationController
 
   def create
     @phrase = Phrase.new(phrase_params)
-    respond_to do |format|
-        if @phrase.save
-            format.json { json_response(@phrase) }
-        else
-            format.json { json_response(@phrase.errors, :unprocessable_entity) }
-        end
-      end
+
+    if @phrase.save
+        format.json { json_response(@phrase) }
+    else
+        format.json { json_response(@phrase.errors, :unprocessable_entity) }
+    end
+
   end
 
   def show
