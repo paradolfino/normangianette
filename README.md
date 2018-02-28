@@ -66,3 +66,5 @@ Things you may want to cover:
 ##### 26/02/2018: 19:47 - 19:58:pool[rollback database and prepare category model with has_many phrases]
 
 ##### 27/02/2018: 19:08 - 19:09:pool[add relationship between categories and words model]
+
+##### 27/02/2018: 19:09 - 19:15:pool[add category routes]
