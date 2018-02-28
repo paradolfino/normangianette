@@ -49,10 +49,9 @@ end
 
   def destroy
     @word.destroy
-    respond_to do |format|
-        format.html { redirect_to words_path, notice: 'Word was successfully destroyed.' }
-        format.json { head :no_content }
-    end
+
+    format.json { head :no_content }
+
   end
 
   private
