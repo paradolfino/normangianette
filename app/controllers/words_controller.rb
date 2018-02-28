@@ -38,15 +38,15 @@ end
   def edit; end
 
   def update
-    respond_to do |format|
-        if @word.update(word_params)
-          format.html { redirect_to @word, notice: 'Word was successfully updated.' }
-          format.json { json_response(@word.to_json(:include => :phrases)) }
-        else
-          format.html { render :edit }
-          format.json { json_response(@word.errors, :unprocessable_entity) }
-        end
-      end
+
+    if @word.update(word_params)
+      format.html { redirect_to @word, notice: 'Word was successfully updated.' }
+      format.json { json_response(@word.to_json(:include => :phrases)) }
+    else
+      format.html { render :edit }
+      format.json { json_response(@word.errors, :unprocessable_entity) }
+    end
+
   end
 
   def destroy
