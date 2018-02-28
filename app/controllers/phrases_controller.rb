@@ -30,12 +30,11 @@ class PhrasesController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-        if @phrase.update(phrase_params)
-          format.json { json_response(@phrase) }
-        else
-          format.json { json_response(@phrase.errors, :unprocessable_entity) }
-        end
+
+    if @phrase.update(phrase_params)
+      format.json { json_response(@phrase) }
+    else
+      format.json { json_response(@phrase.errors, :unprocessable_entity) }
     end
   end
 
