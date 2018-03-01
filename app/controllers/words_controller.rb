@@ -20,7 +20,7 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
 
     if @word.save
-        format.json { json_response(@word.to_json(:include => :phrases)) }
+        
     else
         format.json { json_response(@word.errors, :unprocessable_entity) }
         #render json: @word.errors, status: :unprocessable_entity
