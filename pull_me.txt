@@ -1,1 +1,5 @@
 
+[tested post request with words controller]
+### 28/02/2018[19:38 - 19:52]:
+* testing json requests, deactivate cors protection for test
+

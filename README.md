@@ -70,3 +70,5 @@ Things you may want to cover:
 ##### 27/02/2018: 19:09 - 19:15:pool[add category routes]
 
 ##### 27/02/2018: 19:15 - 19:50:pool[modify phrases and words controller to only allow html rendering for show/index]
+
+##### 28/02/2018: 19:38 - 19:52:pool[testing json requests, deactivate cors protection for test]
