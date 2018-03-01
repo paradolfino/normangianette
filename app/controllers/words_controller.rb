@@ -23,7 +23,7 @@ class WordsController < ApplicationController
         puts "success"
     else
         puts "fail"
-        format.json { json_response(@word.errors, :unprocessable_entity) }
+        #format.json { json_response(@word.errors, :unprocessable_entity) }
         #render json: @word.errors, status: :unprocessable_entity
     end
 
