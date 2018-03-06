@@ -50,7 +50,7 @@ class CategoriesController < ApplicationController
     private
   
     def cat_params
-      params.permit(:name, :created_by)
+      params.permit(:name)
     end
   
     def set_cat
