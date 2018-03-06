@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-    before_action :set_phrase, only: [:show, :update, :destroy]
+    before_action :set_cat, only: [:show, :update, :destroy]
 
 
     def index
@@ -46,11 +46,11 @@ class CategoriesController < ApplicationController
   
     private
   
-    def phrase_params
-      params.permit(:english, :normansk, :created_by, :word_id, :category_id)
+    def cat_params
+      params.permit(:name, :created_by)
     end
   
-    def set_phrase
-      @phrase = Phrase.find(params[:id])
+    def set_cat
+      @category = Category.find(params[:id])
     end
 end
