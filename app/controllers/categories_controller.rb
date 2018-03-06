@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
       @phrases = Phrase.all
       respond_to do |format|
         format.html { render :index }
-        format.json { json_response(@phrases) }
+        format.json { json_response(@categories) }
       end
     end
   
