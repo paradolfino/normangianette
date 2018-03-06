@@ -20,9 +20,9 @@ class WordsController < ApplicationController
     @word = Word.new(word_params)
 
     if @word.save
-        format.json { json_response(@word.to_json(:include => :phrases)) }
+        json_response(@word.to_json(:include => :phrases))
     else
-        format.json { json_response(@word.errors, :unprocessable_entity) }
+        json_response(@word.errors, :unprocessable_entity) 
         #render json: @word.errors, status: :unprocessable_entity
     end
 
@@ -40,9 +40,9 @@ end
   def update
 
     if @word.update(word_params)
-      format.json { json_response(@word.to_json(:include => :phrases)) }
+      json_response(@word.to_json(:include => :phrases)) 
     else
-      format.json { json_response(@word.errors, :unprocessable_entity) }
+      json_response(@word.errors, :unprocessable_entity) 
     end
 
   end
@@ -50,7 +50,7 @@ end
   def destroy
     @word.destroy
 
-    format.json { head :no_content }
+    head :no_content 
 
   end
 
