@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     def create
       @phrase = Phrase.new(phrase_params)
   
-      if @phrase.save
+      if @category.save
           format.json { json_response(@category) }
       else
           format.json { json_response(@category.errors, :unprocessable_entity) }
