@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
 
     def index
-      @phrases = Phrase.all
+      @categories = Phrase.all
       respond_to do |format|
         format.html { render :index }
         format.json { json_response(@categories) }
