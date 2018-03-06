@@ -18,9 +18,9 @@ class PhrasesController < ApplicationController
     @phrase = Phrase.new(phrase_params)
 
     if @phrase.save
-        format.json { json_response(@phrase) }
+      json_response(@phrase)
     else
-        format.json { json_response(@phrase.errors, :unprocessable_entity) }
+      json_response(@phrase.errors, :unprocessable_entity)
     end
 
   end
@@ -32,22 +32,22 @@ class PhrasesController < ApplicationController
   def update
 
     if @phrase.update(phrase_params)
-      format.json { json_response(@phrase) }
+      json_response(@phrase)
     else
-      format.json { json_response(@phrase.errors, :unprocessable_entity) }
+      json_response(@phrase.errors, :unprocessable_entity)
     end
   end
 
   def destroy
     @phrase.destroy
-    format.json { head :no_content }
+    head :no_content
     
   end
 
   private
 
   def phrase_params
-    params.permit(:english, :normansk, :created_by)
+    params.permit(:english, :normansk, :word_id, :category_id)
   end
 
   def set_phrase
