@@ -18,9 +18,9 @@ class CategoriesController < ApplicationController
       @category= Category.new(cat_params)
   
       if @category.save
-          format.json { json_response(@category.to_json(:include => [:words, :phrases])) }
+          json_response(@category.to_json(:include => [:words, :phrases]))
       else
-          format.json { json_response(@category.errors, :unprocessable_entity) }
+          json_response(@category.errors, :unprocessable_entity)
       end
   
     end
@@ -35,15 +35,15 @@ class CategoriesController < ApplicationController
     def update
   
       if @category.update(cat_params)
-        format.json { json_response(@category.to_json(:include => [:words, :phrases])) }
+        json_response(@category.to_json(:include => [:words, :phrases]))
       else
-        format.json { json_response(@category.errors, :unprocessable_entity) }
+        json_response(@category.errors, :unprocessable_entity)
       end
     end
   
     def destroy
       @category.destroy
-      format.json { head :no_content }
+      head :no_content
       
     end
   
