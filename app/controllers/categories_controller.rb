@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
       @category= Category.new(cat_params)
   
       if @category.save
-          format.json { json_response(@category) }
+          format.json { json_response(@categories.to_json(:include => [:words, :phrases])) }
       else
           format.json { json_response(@category.errors, :unprocessable_entity) }
       end
@@ -26,7 +26,10 @@ class CategoriesController < ApplicationController
     end
   
     def show
-      json_response(@category.to_json(:include => :word))
+      respond_to do |format|
+        format.html { render :show}
+        format.json { json_response(@categories.to_json(:include => [:words, :phrases])) }
+      end
     end
   
     def update
