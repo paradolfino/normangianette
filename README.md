@@ -72,3 +72,5 @@ Things you may want to cover:
 ##### 27/02/2018: 19:15 - 19:50:pool[modify phrases and words controller to only allow html rendering for show/index]
 
 ##### 05/03/2018: 19:06 - 19:24:pool[chore: refactor phrases controller to only accept json post requests]
+
+##### 05/03/2018: 19:24 - 19:38:pool[chore: implement REST actions for categories controller]
