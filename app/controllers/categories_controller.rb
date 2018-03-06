@@ -11,11 +11,11 @@ class CategoriesController < ApplicationController
     end
   
     def new
-      @phrase = Phrase.new
+      @category = Category.new
     end
   
     def create
-      @phrase = Phrase.new(phrase_params)
+      @category= Category.new(cat_params)
   
       if @category.save
           format.json { json_response(@category) }
