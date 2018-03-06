@@ -74,3 +74,5 @@ Things you may want to cover:
 ##### 05/03/2018: 19:06 - 19:24:pool[chore: refactor phrases controller to only accept json post requests]
 
 ##### 05/03/2018: 19:24 - 19:38:pool[chore: implement REST actions for categories controller]
+
+##### 05/03/2018: 19:38 - 19:43:pool[chore: fix any argument error issues in words and phrases controllers]
