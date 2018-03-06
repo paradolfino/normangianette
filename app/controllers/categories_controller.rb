@@ -18,28 +18,28 @@ class CategoriesController < ApplicationController
       @phrase = Phrase.new(phrase_params)
   
       if @phrase.save
-          format.json { json_response(@phrase) }
+          format.json { json_response(@category) }
       else
-          format.json { json_response(@phrase.errors, :unprocessable_entity) }
+          format.json { json_response(@category.errors, :unprocessable_entity) }
       end
   
     end
   
     def show
-      json_response(@phrase.to_json(:include => :word))
+      json_response(@category.to_json(:include => :word))
     end
   
     def update
   
-      if @phrase.update(phrase_params)
-        format.json { json_response(@phrase) }
+      if @category.update(cat_params)
+        format.json { json_response(@category) }
       else
-        format.json { json_response(@phrase.errors, :unprocessable_entity) }
+        format.json { json_response(@category.errors, :unprocessable_entity) }
       end
     end
   
     def destroy
-      @phrase.destroy
+      @category.destroy
       format.json { head :no_content }
       
     end
