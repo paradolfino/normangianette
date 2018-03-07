@@ -76,3 +76,5 @@ Things you may want to cover:
 ##### 05/03/2018: 19:24 - 19:38:pool[chore: implement REST actions for categories controller]
 
 ##### 05/03/2018: 19:38 - 19:43:pool[chore: fix any argument error issues in words and phrases controllers]
+
+##### 06/03/2018: 19:34 - 19:58:pool[begin work with friendlizing ids]

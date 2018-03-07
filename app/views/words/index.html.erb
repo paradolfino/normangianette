@@ -1,0 +1,3 @@
+<% @words.each do |w|%>
+    <p><%= link_to w.eng_si.capitalize, word_path(w) %></p>
+<% end %>
