@@ -1,1 +1,5 @@
 
+[begin work on implementing friendlier urls]
+### 06/03/2018[19:34 - 19:58]:
+* begin work with friendlizing ids
+
