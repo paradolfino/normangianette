@@ -1,6 +1,6 @@
 class Word < ApplicationRecord
     def to_param
-        "#{id}-#{english.parameterize}"
+        "#{id}-#{eng_si.parameterize}"
     end
     has_many :phrases, dependent: :destroy
     belongs_to :category
