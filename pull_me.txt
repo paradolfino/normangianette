@@ -1,7 +1,1 @@
 
-[add REST actions to categories controller, test HTTP requests on all controllers, fix bug with argument error on request]
-### 05/03/2018[19:06 - 19:43]:
-* chore: refactor phrases controller to only accept json post requests
-* chore: implement REST actions for categories controller
-* chore: fix any argument error issues in words and phrases controllers
-
